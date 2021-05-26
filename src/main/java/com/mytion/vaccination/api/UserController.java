@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mytion.vaccination.model.entity.User;
 import com.mytion.vaccination.service.UserService;
@@ -17,6 +18,7 @@ public class UserController extends ApiController{
 	
 	private final UserService userService;
 	
+	@Autowired
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}
