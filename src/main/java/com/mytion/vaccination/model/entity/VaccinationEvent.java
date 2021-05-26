@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class VaccinationEvent {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
 	@Column(name = "vaccine_name")
