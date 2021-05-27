@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.mytion.vaccination.model.entity.User;
 import com.mytion.vaccination.service.UserService;
 
+import com.mytion.vaccination.model.response.user.UserResponse;
+
 @RestController
 public class UserController extends ApiController{
 	
@@ -24,13 +26,13 @@ public class UserController extends ApiController{
 	}
 	
 	@PostMapping(value = "/users")
-	public ResponseEntity<User> registerUser(@RequestBody User user){
-		User userResponse = userService.register(user);
+	public ResponseEntity<UserResponse> registerUser(@RequestBody User user){
+		UserResponse userResponse = userService.register(user);
 		return new ResponseEntity<>(userResponse,HttpStatus.CREATED);
 	}
 	@GetMapping(value = "/users")
 	public ResponseEntity<List<User>> getAll(){
-		List<User> userResponse = userService.getAll();
+		List<User> userResponse = userService.getAllUsers();
 		return new ResponseEntity<>(userResponse,HttpStatus.OK);
 	}
 }
